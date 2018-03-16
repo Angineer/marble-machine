@@ -1,7 +1,7 @@
-# Code to operate a xylophone-playing marble machine
-
-# Authors: Andy Tracy <adtme11@gmail.com>, Matthew Bartnof
-
+# Simple demo of of the PCA9685 PWM servo/LED controller library.
+# This will move channel 0 from min to max position repeatedly.
+# Author: Tony DiCola
+# License: Public Domain
 from __future__ import division
 import time
 import sys
@@ -32,16 +32,13 @@ def set_servo_array(bit_mask):
     ''' Set all servos to on/off positions,
         specified by bits in the bitmask
         that gets passed in
-
-        0 means don't let the balls through
-        1 means let the balls through
         '''
     for i in range(16):
       if (bit_mask >> i) & 0x1:
         pwm.set_pwm(i, 0, servo_max)
       else:
         pwm.set_pwm(i, 0, servo_min)
-
+'''
 def main():
     if len(sys.argv) == 1:
         print("Please include a song file argument")
@@ -60,3 +57,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+'''
+set_servo_array(int(sys.argv[1],0)) # 0 makes it an integer
+time.sleep(float(sys.argv[2]))
+set_servo_array(int(0x0000))

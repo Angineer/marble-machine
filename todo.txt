@@ -1,0 +1,9 @@
+- Flip servos or add tape
+- Reset max/min so that open time is shorter
+- Groove at bottom of chute
+- Prevent jams in chute by changing angle?
+- Cut legs for 45 degrees
+- Re-center servo horns
+- Make more effective ball catcher
+- Add jumpers to all servos
+- Make it easier to add balls
